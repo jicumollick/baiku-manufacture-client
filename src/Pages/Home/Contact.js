@@ -1,9 +1,71 @@
 import React from "react";
-
+import { useForm } from "react-hook-form";
 const Contact = () => {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data, e) => {
+    e.target.reset();
+  };
   return (
-    <div>
-      <h2>Contact</h2>
+    <div className="py-5" style={{ backgroundColor: "lightcyan" }}>
+      <h1 className="primary-color pb-5">Contact Us</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 offset-md-3">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="mb-3">
+                <label htmlFor="firstName" class="form-label">
+                  FirstName:{" "}
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="firstName"
+                  placeholder="Type First Name"
+                  {...register("firstName", { required: true, maxLength: 20 })}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="lastName" class="form-label">
+                  LastName:{" "}
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="lastName"
+                  placeholder="Type Last Name"
+                  {...register("lastName", { required: true, maxLength: 20 })}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="email" class="form-label">
+                  Email:{" "}
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  placeholder="Type Your Email"
+                  {...register("email", { required: true })}
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="message" class="form-label">
+                  Message:{" "}
+                </label>
+                <textarea
+                  type="text"
+                  className="form-control"
+                  id="message"
+                  placeholder="Type Your Message"
+                  {...register("message", { required: true, maxLength: 20 })}
+                />
+              </div>
+
+              <input type="submit" className="btn myButton" />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

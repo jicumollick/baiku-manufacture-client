@@ -12,7 +12,7 @@ const Banner = () => {
                 <span className="primary-color"> Baiku Manufacture</span>{" "}
               </h1>
               <p>
-                <small>Your trusted Bike House</small>
+                <small>Your Trusted Bike Manufacture Partner</small>
               </p>
             </div>
           </div>

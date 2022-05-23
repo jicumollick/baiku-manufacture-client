@@ -40,3 +40,15 @@
 .primary-color {
   color: orangered;
 }
+.myButton {
+  background-color: orangered;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.myButton:hover {
+  background-color: green;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+}
