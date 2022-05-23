@@ -8,7 +8,8 @@ import Portfolio from "./Pages/Portfolio/Portfolio";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Login from "./Pages/Login/Login";
 import NotFound from "./Pages/NotFound/NotFound";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login></Login>} />
         <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
+      <ToastContainer />
       <Footer></Footer>
     </div>
   );

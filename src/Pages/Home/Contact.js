@@ -1,9 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 const Contact = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, e) => {
     e.target.reset();
+    toast.success("Message Sended Succesfully");
   };
   return (
     <div className="py-5" style={{ backgroundColor: "lightcyan" }}>
