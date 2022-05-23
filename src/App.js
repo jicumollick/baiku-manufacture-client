@@ -7,6 +7,7 @@ import Blogs from "./Pages/Blogs/Blogs";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Login from "./Pages/Login/Login";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>} />
         <Route path="/dashboard" element={<Dashboard></Dashboard>} />
         <Route path="/login" element={<Login></Login>} />
+        <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
       <Footer></Footer>
     </div>
