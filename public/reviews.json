@@ -1,0 +1,21 @@
+
+[
+    {
+        "name" : "jiku miya",
+        "rating": 5,
+        "message": "very nice product"
+
+    },
+    {
+        "name" : "Jahid Hasan",
+        "rating": 4.5,
+        "message": "Their quality of product is amazing"
+
+    },
+    {
+        "name" : "Nazifa Sadia",
+        "rating": 4.8,
+        "message": "Every bike parts are very Unique"
+
+    }
+]

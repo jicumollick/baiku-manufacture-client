@@ -1,86 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Purchase from "../Purchase/Purchase";
 
 const BikeParts = () => {
+  const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    fetch("http://localhost:5000/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
+
+  const handlePurchase = (product) => {
+    const id = product._id;
+    navigate(`/purchase/${id}`);
+  };
+
   return (
     <div className="py-5" style={{ backgroundColor: "lightyellow" }}>
-      <div className="container">
+      <div class="container">
         <h1 className="primary-color pb-5">Our Bike Parts</h1>
-        <div className="row">
-          <div className="col-sm">
-            <div
-              className="card"
-              style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
-            >
-              <div className="p-3">
-                <img
-                  className="card-img-top img-fluid"
-                  src="https://cdn.media.halfords.com/i/washford/463030/Shark-Ridill-Motorcycle-Helmet.webp?fmt=auto&qlt=default&$sfcc_tile$&w=680"
-                  alt=""
-                />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">Name</h5>
-                <p className="card-text">Short Description</p>
-                <p className="card-text">Minimum Order Quantity</p>
-                <p className="card-text">Available Quantity</p>
-                <p className="card-text">Price</p>
+        <div class="row">
+          {products.map((product) => (
+            <div class="col-sm" key={product._id}>
+              <div
+                class="card"
+                style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
+              >
+                <div className="p-3">
+                  <img
+                    class="card-img-top img-fluid"
+                    src={product.img}
+                    alt=""
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Name: {product.name}</h5>
+                  <p class="card-text">{product.ShortDescription}</p>
+                  <p class="card-text"> Minimum Qty: {product.minimumQty}</p>
+                  <p class="card-text">
+                    {" "}
+                    Available Qty: {product.availableQty}
+                  </p>
+                  <p class="card-text">Price: {product.availableQty}</p>
 
-                <a href="#" className="btn myButton">
-                  Purchase
-                </a>
+                  <button
+                    class="btn myButton"
+                    onClick={() => handlePurchase(product)}
+                  >
+                    Purchase
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-sm">
-            <div
-              className="card"
-              style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
-            >
-              <div className="p-3">
-                <img
-                  className="card-img-top img-fluid"
-                  src="https://cdn.media.halfords.com/i/washford/463030/Shark-Ridill-Motorcycle-Helmet.webp?fmt=auto&qlt=default&$sfcc_tile$&w=680"
-                  alt=""
-                />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">Name</h5>
-                <p className="card-text">Short Description</p>
-                <p className="card-text">Minimum Order Quantity</p>
-                <p className="card-text">Available Quantity</p>
-                <p className="card-text">Price</p>
-
-                <a href="#" className="btn myButton">
-                  Purchase
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm">
-            <div
-              className="card"
-              style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
-            >
-              <div className="p-3">
-                <img
-                  className="card-img-top img-fluid"
-                  src="https://cdn.media.halfords.com/i/washford/463030/Shark-Ridill-Motorcycle-Helmet.webp?fmt=auto&qlt=default&$sfcc_tile$&w=680"
-                  alt=""
-                />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">Name</h5>
-                <p className="card-text">Short Description</p>
-                <p className="card-text">Minimum Order Quantity</p>
-                <p className="card-text">Available Quantity</p>
-                <p className="card-text">Price</p>
-
-                <a href="#" className="btn myButton">
-                  Purchase
-                </a>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

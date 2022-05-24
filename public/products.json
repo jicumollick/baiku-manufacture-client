@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Helmet",
+        "img": "https://cdn.media.halfords.com/i/washford/463030/Shark-Ridill-Motorcycle-Helmet.webp?fmt=auto&qlt=default&$sfcc_tile$&w=680",
+        "ShortDescription": "this is an awesome Helmet to buy",
+        "minimumQty": 20,
+        "availableQty": 210,
+        "price": 40
+    },
+    {
+        "name": "Mudguards",
+        "img": "https://i5.walmartimages.com/asr/dbbfdbdf-74bf-4eb4-978c-86363540fea8.04d32a9ca91bedfc932fff85437e13a9.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+        "ShortDescription": "this is an awesome Helmet to buy",
+        "minimumQty": 10,
+        "availableQty": 860,
+        "price": 27
+    },
+    {
+        "name": "Light",
+        "img": "https://4.imimg.com/data4/RO/XU/MY-436970/motorcycle-headlight-250x250.jpg",
+        "ShortDescription": "this is an awesome Helmet to buy",
+        "minimumQty": 5,
+        "availableQty": 50,
+        "price": 150
+    }
+]
