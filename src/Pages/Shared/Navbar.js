@@ -1,7 +1,14 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import CustomLink from "./CustomLink";
 
 const Navbar = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+  };
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,9 +41,19 @@ const Navbar = () => {
               <li class="nav-item px-lg-2 py-3 py-lg-2">
                 <CustomLink to={"/dashboard"}>Dashboard</CustomLink>
               </li>
-              <li class="nav-item px-lg-2 py-3 py-lg-2">
-                <CustomLink to={"/login"}>Login</CustomLink>
-              </li>
+
+              {user ? (
+                <li
+                  class="nav-item px-lg-2 py-3 py-lg-2"
+                  onClick={() => logout()}
+                >
+                  <CustomLink to={"/login"}>Logout</CustomLink>
+                </li>
+              ) : (
+                <li class="nav-item px-lg-2 py-3 py-lg-2">
+                  <CustomLink to={"/login"}>Login</CustomLink>
+                </li>
+              )}
             </ul>
           </div>
         </div>

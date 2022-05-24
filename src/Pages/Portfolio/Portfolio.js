@@ -19,7 +19,7 @@ const Portfolio = () => {
             class="col-12 col-md-6 "
             style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
           >
-            <div class="card">
+            <div class="card px-lg-3">
               <div class="card-body">
                 <h2 class="card-title">
                   {" "}
