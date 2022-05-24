@@ -3,33 +3,33 @@ import React from "react";
 const Reviews = () => {
   return (
     <div className="py-5" style={{ backgroundColor: "LightGoldenrodYellow" }}>
-      <div class="container">
+      <div className="container">
         <h1 className="primary-color pb-5">Client Reviews</h1>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="card text-white bg-primary mb-3">
-              <div class="card-header">Name: jiku Mollick </div>
-              <div class="card-body">
-                <h5 class="card-title">Rating: 5</h5>
-                <p class="card-text">comment</p>
+        <div className="row">
+          <div className="col-sm-4">
+            <div className="card text-white bg-primary mb-3">
+              <div className="card-header">Name: jiku Mollick </div>
+              <div className="card-body">
+                <h5 className="card-title">Rating: 5</h5>
+                <p className="card-text">comment</p>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card text-white bg-primary mb-3">
-              <div class="card-header">Name: jiku Mollick </div>
-              <div class="card-body">
-                <h5 class="card-title">Rating: 5</h5>
-                <p class="card-text">comment</p>
+          <div className="col-sm-4">
+            <div className="card text-white bg-primary mb-3">
+              <div className="card-header">Name: jiku Mollick </div>
+              <div className="card-body">
+                <h5 className="card-title">Rating: 5</h5>
+                <p className="card-text">comment</p>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card text-white bg-primary mb-3">
-              <div class="card-header">Name: jiku Mollick </div>
-              <div class="card-body">
-                <h5 class="card-title">Rating: 5</h5>
-                <p class="card-text">comment</p>
+          <div className="col-sm-4">
+            <div className="card text-white bg-primary mb-3">
+              <div className="card-header">Name: jiku Mollick </div>
+              <div className="card-body">
+                <h5 className="card-title">Rating: 5</h5>
+                <p className="card-text">comment</p>
               </div>
             </div>
           </div>

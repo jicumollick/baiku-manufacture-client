@@ -33,7 +33,7 @@ const Login = () => {
     const email = e.target.email?.value;
     const password = e.target.password?.value;
     const confirmPassword = e.target.confirmPassword?.value;
-    console.log(email, password);
+
     setEmail(email);
     setPassword(password);
     if (register) {
