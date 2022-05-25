@@ -1,12 +1,17 @@
+import { async } from "@firebase/util";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Purchase = () => {
+  const [quantity, setQuantity] = useState(0);
+  const [maxQty, setMaxQuantity] = useState(0);
+  const [minQty, setMinQuantity] = useState(0);
+  const [qtyError, setQtyError] = useState("");
   const [product, setProduct] = useState({});
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
+  //   console.log(user);
 
   const { id } = useParams();
 
@@ -21,8 +26,29 @@ const Purchase = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setProduct(data));
+      .then((data) => {
+        setProduct(data);
+        setMaxQuantity(data?.availableQty);
+        setMinQuantity(data?.minimumQty);
+      });
   }, []);
+
+  const handleQuantity = async (e) => {
+    console.log(e.target.value);
+    await setQuantity(e?.target?.value);
+
+    console.log(quantity, maxQty, minQty);
+
+    if (quantity > maxQty || quantity < minQty) {
+      if (quantity < minQty) {
+        setQtyError(`Order More than ${minQty - 1}`);
+      } else {
+        setQtyError(`Order Less than ${maxQty + 1}`);
+      }
+    } else {
+      setQtyError("");
+    }
+  };
 
   return (
     <div className="py-5">
@@ -115,10 +141,22 @@ const Purchase = () => {
                     type="number"
                     class="form-control"
                     id="orderQty"
-                    defaultValue={product.minimumQty}
+                    // defaultValue={product.minimumQty}
+                    onChange={(e) => handleQuantity(e)}
                   />
                 </div>
               </div>
+
+              {qtyError ? <p className="text-danger">{qtyError}</p> : ""}
+
+              {/* {quantity < product.minimumQty
+                ? setQtyError(`order more than ${product.minimumQty}`)
+                : ""}
+              {quantity > product.availableQty
+                ? setQtyError(`Order less than ${product.availableQty}`)
+                : ""}
+              {qtyError ? <p className="text-danger">{qtyError}</p> : ""} */}
+
               <div class="form-group row my-2">
                 <label for="userName" class="col-sm-2 col-form-label ">
                   User Name:
@@ -175,7 +213,20 @@ const Purchase = () => {
                   />
                 </div>
               </div>
-              <button className="btn myButton">Place Order</button>
+              <a
+                href
+                className={`
+                 ${
+                   quantity < product.minimumQty ||
+                   (quantity > product.availableQty &&
+                     quantity !== product.minimumQty)
+                     ? "disabled"
+                     : "btn myButton"
+                 }
+                `}
+              >
+                Place Order
+              </a>
             </form>
           </div>
           <div class="col-sm"></div>

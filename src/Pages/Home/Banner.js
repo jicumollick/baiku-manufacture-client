@@ -3,9 +3,9 @@ import bike from "../../Assets/images/bike.png";
 const Banner = () => {
   return (
     <div style={{ backgroundColor: "lightblue", padding: "20px 40px" }}>
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-12 col-md-6">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6">
             <div>
               <h1>
                 Welcome to <br />
@@ -16,7 +16,7 @@ const Banner = () => {
               </p>
             </div>
           </div>
-          <div className="col-12 col-md-6">
+          <div class="col-12 col-md-6">
             <div>
               <img src={bike} className="img-fluid" alt="" />
             </div>
