@@ -33,11 +33,11 @@ const Purchase = () => {
       });
   }, []);
 
-  const handleQuantity = async (e) => {
-    console.log(e.target.value);
-    await setQuantity(e?.target?.value);
+  const handleQuantity = (e) => {
+    // console.log(e.target.value);
+    setQuantity(e?.target?.value);
 
-    console.log(quantity, maxQty, minQty);
+    // console.log(quantity, maxQty, minQty);
 
     if (quantity > maxQty || quantity < minQty) {
       if (quantity < minQty) {
@@ -50,6 +50,39 @@ const Purchase = () => {
     }
   };
 
+  const handleOrder = (e) => {
+    e.preventDefault();
+
+    console.log(e);
+
+    const name = e.target.name.value;
+    const description = e?.target[1]?.value;
+    const price = e.target[2].value;
+    const availableQty = e.target[3].value;
+    const minimumQty = e.target[4].value;
+    const orderQty = e.target[5].value;
+    const userName = e.target[6].value;
+    const userEmail = e.target[7].value;
+    const address = e.target[8].value;
+    const phone = e.target[9].value;
+    const order = {
+      name,
+      description,
+      price,
+      availableQty,
+      minimumQty,
+      orderQty,
+      userName,
+      userEmail,
+      address,
+      phone,
+    };
+
+    // make a url and put this order in order table
+
+    console.log(order);
+  };
+
   return (
     <div className="py-5">
       <div class="container">
@@ -59,7 +92,7 @@ const Purchase = () => {
           <div class="col-sm col-md-8">
             {/* Order form  */}
 
-            <form>
+            <form onSubmit={(e) => handleOrder(e)}>
               <div class="form-group row my-2">
                 <label for="name" class="col-sm-2 col-form-label">
                   Name:
@@ -213,20 +246,20 @@ const Purchase = () => {
                   />
                 </div>
               </div>
-              <a
-                href
+              <button
+                type="submit"
                 className={`
                  ${
                    quantity < product.minimumQty ||
                    (quantity > product.availableQty &&
                      quantity !== product.minimumQty)
-                     ? "disabled"
+                     ? "disableBtn"
                      : "btn myButton"
                  }
                 `}
               >
                 Place Order
-              </a>
+              </button>
             </form>
           </div>
           <div class="col-sm"></div>

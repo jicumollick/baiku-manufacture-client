@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "Helmet",
+        "description": "Their Helmets are awesome, highly recommended",
+        "price": 36,
+        "availableQty": 534,
+        "minimumQty": 10,
+        "orderQty": 23,
+        "userName": " Jiku Mollick",
+        "userEmail": "jikumollick97@gmail.com",
+        "address": " Naniarchar, Chittagong" ,
+        "phone": "0124579656"
+      }
+]
