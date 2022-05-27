@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import useToken from "../../hooks/useToken";
 const Login = () => {
   let navigate = useNavigate();
   let location = useLocation();
@@ -24,6 +25,8 @@ const Login = () => {
   ] = useCreateUserWithEmailAndPassword(auth);
   const [signInWithEmailAndPassword, loginUser, loginLoading, loginError] =
     useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(googleUser || loginUser);
+  console.log(token);
   const handleChange = (e) => {
     const isChecked = e.target.checked;
     setRegister(isChecked);

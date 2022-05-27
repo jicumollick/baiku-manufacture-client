@@ -97,3 +97,18 @@ color: #fff
   color: #c0c0c0;
   background-color: #ffffff;
 }
+
+.dashboardItem {
+  margin: 10px 0px;
+}
+.dashboardItem a {
+  text-decoration: none;
+  font-size: 20px;
+  /* background-color: darkred; */
+  
+}
+.dashboardItem a:hover {
+  color: orangered;
+ 
+  
+}

@@ -7,6 +7,7 @@ import CustomLink from "./CustomLink";
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
   const logout = () => {
+    localStorage.removeItem("accessToken");
     signOut(auth);
   };
   return (
@@ -38,9 +39,14 @@ const Navbar = () => {
               <li class="nav-item px-lg-2 py-3 py-lg-2">
                 <CustomLink to={"/portfolio"}>Portfolio</CustomLink>
               </li>
-              <li class="nav-item px-lg-2 py-3 py-lg-2">
-                <CustomLink to={"/dashboard"}>Dashboard</CustomLink>
-              </li>
+
+              {user ? (
+                <li class="nav-item px-lg-2 py-3 py-lg-2">
+                  <CustomLink to={"/dashboard"}>Dashboard</CustomLink>
+                </li>
+              ) : (
+                ""
+              )}
 
               {user ? (
                 <li

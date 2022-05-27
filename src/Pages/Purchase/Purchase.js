@@ -2,6 +2,7 @@ import { async } from "@firebase/util";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const Purchase = () => {
@@ -79,6 +80,22 @@ const Purchase = () => {
     };
 
     // make a url and put this order in order table
+
+    fetch("http://localhost:5000/order", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((inserted) => {
+        if (inserted.insertedId) {
+          toast.success("Order Added Successfully");
+        } else {
+          toast.error("Failed to add Order");
+        }
+      });
 
     console.log(order);
   };
