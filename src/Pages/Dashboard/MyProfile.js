@@ -9,7 +9,7 @@ const MyProfile = () => {
 
   // taking current user
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user?.email}`)
+    fetch(`https://immense-dawn-63493.herokuapp.com/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setCurrentUser(data);
@@ -27,7 +27,7 @@ const MyProfile = () => {
     const user = { email, username, education, address, phone };
     console.log(email, username, education, address, phone);
 
-    fetch(`http://localhost:5000/user/${email}`, {
+    fetch(`https://immense-dawn-63493.herokuapp.com/user/${email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

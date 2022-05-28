@@ -28,7 +28,9 @@ const ManageProducts = () => {
     const agree = window.confirm("Do you want to delete? ");
     console.log(agree);
     if (agree) {
-      await fetch(`http://localhost:5000/product/${product._id}`)
+      await fetch(
+        `https://immense-dawn-63493.herokuapp.com/product/${product._id}`
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
