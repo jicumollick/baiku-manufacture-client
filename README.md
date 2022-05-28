@@ -1,3 +1,15 @@
+
+# Baiku Manufacturer 
+=> a bike management home to get all kinds ok bikes parts.
+=> A customer an purchase bike via paying international card.
+=> Very much authentication check by JWT
+=> A strong login sytem by google and firebase.
+=> an attractive UI.
+
+### Live website Link
+
+[Baik Manufacture](https://baiku-manufacture.web.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
