@@ -12,7 +12,7 @@ const ManageOrders = () => {
     <div>
       <h2>Manage Your Orders</h2>
 
-      <table class="table table-striped">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>

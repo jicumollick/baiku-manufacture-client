@@ -3,54 +3,54 @@ import React from "react";
 const Team = () => {
   return (
     <div className="py-5" style={{ backgroundColor: "Lavender" }}>
-      <div class="container">
+      <div className="container">
         <h1 className="primary-color pb-5">Meet The Team</h1>
-        <div class="row">
-          <div class="col-sm">
+        <div className="row">
+          <div className="col-sm">
             <div
-              class="card"
+              className="card"
               style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
             >
               <img
                 src="http://demo.themecanyon.org/html/primax/images/team-1.jpg"
-                class="card-img-top"
+                className="card-img-top"
                 alt="..."
               />
-              <div class="card-body">
-                <h5 class="card-title">Jonathon Silva</h5>
-                <p class="card-text">CEO & Founder</p>
+              <div className="card-body">
+                <h5 className="card-title">Jonathon Silva</h5>
+                <p className="card-text">CEO & Founder</p>
               </div>
             </div>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <div
-              class="card"
+              className="card"
               style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
             >
               <img
                 src="http://demo.themecanyon.org/html/primax/images/team-2.jpg"
-                class="card-img-top"
+                className="card-img-top"
                 alt="..."
               />
-              <div class="card-body">
-                <h5 class="card-title">Michel Santner</h5>
-                <p class="card-text">Technical Lead</p>
+              <div className="card-body">
+                <h5 className="card-title">Michel Santner</h5>
+                <p className="card-text">Technical Lead</p>
               </div>
             </div>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <div
-              class="card"
+              className="card"
               style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
             >
               <img
                 src="https://demo.themecanyon.org/html/primax/images/team-3.jpg"
-                class="card-img-top"
+                className="card-img-top"
                 alt="..."
               />
-              <div class="card-body">
-                <h5 class="card-title">Mika Singa</h5>
-                <p class="card-text">Chief Advisor & executive</p>
+              <div className="card-body">
+                <h5 className="card-title">Mika Singa</h5>
+                <p className="card-text">Chief Advisor & executive</p>
               </div>
             </div>
           </div>

@@ -20,34 +20,37 @@ const BikeParts = () => {
 
   return (
     <div className="py-5" style={{ backgroundColor: "lightyellow" }}>
-      <div class="container">
+      <div className="container">
         <h1 className="primary-color pb-5">Our Bike Parts</h1>
-        <div class="row">
+        <div className="row ">
           {products.map((product) => (
-            <div class="col-sm" key={product._id}>
+            <div className="col-sm-4 my-3" key={product._id}>
               <div
-                class="card"
+                className="card"
                 style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
               >
                 <div className="p-3">
                   <img
-                    class="card-img-top img-fluid"
+                    className="card-img-top img-fluid"
                     src={product.img}
                     alt=""
                   />
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">Name: {product.name}</h5>
-                  <p class="card-text">{product.ShortDescription}</p>
-                  <p class="card-text"> Minimum Qty: {product.minimumQty}</p>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">Name: {product.name}</h5>
+                  <p className="card-text">{product.ShortDescription}</p>
+                  <p className="card-text">
+                    {" "}
+                    Minimum Qty: {product.minimumQty}
+                  </p>
+                  <p className="card-text">
                     {" "}
                     Available Qty: {product.availableQty}
                   </p>
-                  <p class="card-text">Price: {product.availableQty}</p>
+                  <p className="card-text">Price: {product.availableQty}</p>
 
                   <button
-                    class="btn myButton"
+                    className="btn myButton"
                     onClick={() => handlePurchase(product)}
                   >
                     Purchase

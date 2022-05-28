@@ -4,11 +4,11 @@ const Blogs = () => {
   return (
     <div className="py-5" style={{ backgroundColor: "lightcyan" }}>
       <h2 className="primary-color pb-5">Welcome to Our Blog</h2>
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
+      <div className="accordion" id="accordionExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingOne">
             <button
-              class="accordion-button"
+              className="accordion-button"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
@@ -20,11 +20,11 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseOne"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               <p>
                 To improve the performance of a react app, we have to focus on{" "}
                 <strong>reducing unnecessary props</strong>, have to use{" "}
@@ -36,10 +36,10 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingTwo">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
@@ -52,11 +52,11 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseTwo"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               <p>
                 {" "}
                 To manage a state in react app, we can use{" "}
@@ -67,10 +67,10 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingThree">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
@@ -82,11 +82,11 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseThree"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               <p>
                 {" "}
                 It's a method to take the access of another object using
@@ -100,10 +100,10 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingFour">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseFour"
@@ -117,11 +117,11 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseFour"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingFour"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               Instead of setting the products value directly , we are taking
               help of a <strong> React Hook Function </strong>. Because A hook
               function like setProducts can be <strong> Reused </strong> on many
@@ -129,10 +129,10 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFive">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingFive">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseFive"
@@ -146,11 +146,11 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseFive"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingFive"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               <code>
                 {" "}
                 {`
@@ -181,10 +181,10 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingSix">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingSix">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseSix"
@@ -196,11 +196,11 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseSix"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingSix"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               Unit Test is a type of test that is write and run by software
               developer to ensure a <strong> particular section </strong> of a
               software meets design behaves as expected. We should definitely

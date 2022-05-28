@@ -84,14 +84,14 @@ const Login = () => {
         backgroundColor: "lightcyan",
       }}
     >
-      <div class="container">
+      <div className="container">
         <h1 className="primary-color pb-5">
           {" "}
           {register ? "Register" : "Login"} Form
         </h1>
-        <div class="row">
-          <div class="col-sm"></div>
-          <div class="col-sm">
+        <div className="row">
+          <div className="col-sm"></div>
+          <div className="col-sm">
             {/* Login for  */}
 
             <form
@@ -102,23 +102,23 @@ const Login = () => {
                 padding: "20px",
               }}
             >
-              <div class="form-group" style={{ textAlign: "left" }}>
-                <label for="exampleInputEmail1">Email address</label>
+              <div className="form-group" style={{ textAlign: "left" }}>
+                <label htmlFor="exampleInputEmail1">Email address</label>
                 <input
                   name="email"
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
                 />
               </div>
-              <div class="form-group py-3" style={{ textAlign: "left" }}>
-                <label for="exampleInputPassword1">Password</label>
+              <div className="form-group py-3" style={{ textAlign: "left" }}>
+                <label htmlFor="exampleInputPassword1">Password</label>
                 <input
                   name="password"
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="exampleInputPassword1"
                   placeholder="Password"
                 />
@@ -126,12 +126,12 @@ const Login = () => {
 
               {register ? (
                 <>
-                  <div class="form-group" style={{ textAlign: "left" }}>
-                    <label for="confirmPassword"> Confirm Password</label>
+                  <div className="form-group" style={{ textAlign: "left" }}>
+                    <label htmlFor="confirmPassword"> Confirm Password</label>
                     <input
                       name="confirmPassword"
                       type="password"
-                      class="form-control"
+                      className="form-control"
                       id="confirmPassword"
                       placeholder="Confirm Password"
                     />
@@ -140,39 +140,39 @@ const Login = () => {
               ) : (
                 ""
               )}
-              <div class="form-check py-3" style={{ textAlign: "left" }}>
+              <div className="form-check py-3" style={{ textAlign: "left" }}>
                 <input
                   name="checkbox"
                   type="checkbox"
-                  class="form-check-input"
+                  className="form-check-input"
                   id="exampleCheck1"
                   onChange={(e) => handleChange(e)}
                 />
 
-                <label class="form-check-label" for="exampleCheck1">
+                <label className="form-check-label" htmlFor="exampleCheck1">
                   Don't have an account ?
                 </label>
               </div>
               <div>
                 <p className="text-danger">{error ? error : ""}</p>
               </div>
-              <button type="submit" class="btn myButton">
+              <button type="submit" className="btn myButton">
                 {register ? "Register" : "Login"}
               </button>
             </form>
           </div>
-          <div class="col-sm"></div>
+          <div className="col-sm"></div>
 
-          <div class="row py-4">
-            <div class="col-sm"></div>
-            <div class="col ">
+          <div className="row py-4">
+            <div className="col-sm"></div>
+            <div className="col ">
               <hr />
             </div>
-            <div class="col-auto fw-bold">OR</div>
-            <div class="col">
+            <div className="col-auto fw-bold">OR</div>
+            <div className="col">
               <hr />
             </div>
-            <div class="col-sm"></div>
+            <div className="col-sm"></div>
           </div>
           <div>
             <button

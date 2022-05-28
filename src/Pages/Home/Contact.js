@@ -10,12 +10,12 @@ const Contact = () => {
   return (
     <div className="py-5" style={{ backgroundColor: "lightcyan" }}>
       <h1 className="primary-color pb-5">Contact Us</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 offset-md-3">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-6 offset-md-3">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-3">
-                <label htmlFor="firstName" class="form-label">
+                <label htmlhtmlFor="firstName" className="form-label">
                   FirstName:{" "}
                 </label>
                 <input
@@ -27,7 +27,7 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="lastName" class="form-label">
+                <label htmlhtmlFor="lastName" className="form-label">
                   LastName:{" "}
                 </label>
                 <input
@@ -39,7 +39,7 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="email" class="form-label">
+                <label htmlhtmlFor="email" className="form-label">
                   Email:{" "}
                 </label>
                 <input
@@ -51,7 +51,7 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="message" class="form-label">
+                <label htmlhtmlFor="message" className="form-label">
                   Message:{" "}
                 </label>
                 <textarea

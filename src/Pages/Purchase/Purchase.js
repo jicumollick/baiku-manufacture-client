@@ -54,8 +54,6 @@ const Purchase = () => {
   const handleOrder = (e) => {
     e.preventDefault();
 
-    console.log(e);
-
     const name = e.target.name.value;
     const description = e?.target[1]?.value;
     const price = e.target[2].value;
@@ -77,6 +75,7 @@ const Purchase = () => {
       userEmail,
       address,
       phone,
+      paid: true,
     };
 
     // make a url and put this order in order table
@@ -102,94 +101,103 @@ const Purchase = () => {
 
   return (
     <div className="py-5">
-      <div class="container">
+      <div className="container">
         <h1 className="primary-color">Order Now</h1>
-        <div class="row">
-          <div class="col-sm"></div>
-          <div class="col-sm col-md-8">
+        <div className="row">
+          <div className="col-sm"></div>
+          <div className="col-sm col-md-8">
             {/* Order form  */}
 
             <form onSubmit={(e) => handleOrder(e)}>
-              <div class="form-group row my-2">
-                <label for="name" class="col-sm-2 col-form-label">
+              <div className="form-group row my-2">
+                <label htmlFor="name" className="col-sm-2 col-form-label">
                   Name:
                 </label>
-                <div class="col-sm-10">
+                <div className="col-sm-10">
                   <input
                     name="name"
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="name"
                     value={product.name}
                   />
                 </div>
               </div>
-              <div class="form-group row my-2">
-                <label for="description" class="col-sm-2 col-form-label ">
+              <div className="form-group row my-2">
+                <label
+                  htmlFor="description"
+                  className="col-sm-2 col-form-label "
+                >
                   Description:
                 </label>
-                <div class="col-sm-10 ">
+                <div className="col-sm-10 ">
                   <input
                     name="description"
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="description"
                     value={product.ShortDescription}
                   />
                 </div>
               </div>
-              <div class="form-group row my-2">
-                <label for="price" class="col-sm-2 col-form-label ">
+              <div className="form-group row my-2">
+                <label htmlFor="price" className="col-sm-2 col-form-label ">
                   Price:
                 </label>
-                <div class="col-sm-10 ">
+                <div className="col-sm-10 ">
                   <input
                     name="price"
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="price"
                     value={product.price}
                   />
                 </div>
               </div>
 
-              <div class="form-group row my-2">
-                <label for="availableQty" class="col-sm-2 col-form-label ">
+              <div className="form-group row my-2">
+                <label
+                  htmlFor="availableQty"
+                  className="col-sm-2 col-form-label "
+                >
                   Available Qty:
                 </label>
-                <div class="col-sm-10 ">
+                <div className="col-sm-10 ">
                   <input
                     name="availableQty"
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="availableQty"
                     value={product.availableQty}
                   />
                 </div>
               </div>
-              <div class="form-group row my-2">
-                <label for="minimumQty" class="col-sm-2 col-form-label ">
+              <div className="form-group row my-2">
+                <label
+                  htmlFor="minimumQty"
+                  className="col-sm-2 col-form-label "
+                >
                   Minimum Order Qty:
                 </label>
-                <div class="col-sm-10 ">
+                <div className="col-sm-10 ">
                   <input
                     name="minimumQty"
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     id="minimumQty"
                     value={product.minimumQty}
                   />
                 </div>
               </div>
-              <div class="form-group row my-2">
-                <label for="orderQty" class="col-sm-2 col-form-label ">
+              <div className="form-group row my-2">
+                <label htmlFor="orderQty" className="col-sm-2 col-form-label ">
                   Your Order Qty:
                 </label>
-                <div class="col-sm-10 ">
+                <div className="col-sm-10 ">
                   <input
                     name="orderQty"
                     type="number"
-                    class="form-control"
+                    className="form-control"
                     id="orderQty"
                     // defaultValue={product.minimumQty}
                     onChange={(e) => handleQuantity(e)}
@@ -207,57 +215,57 @@ const Purchase = () => {
                 : ""}
               {qtyError ? <p className="text-danger">{qtyError}</p> : ""} */}
 
-              <div class="form-group row my-2">
-                <label for="userName" class="col-sm-2 col-form-label ">
+              <div className="form-group row my-2">
+                <label htmlFor="userName" className="col-sm-2 col-form-label ">
                   User Name:
                 </label>
-                <div class="col-sm-10 ">
+                <div className="col-sm-10 ">
                   <input
                     name="userName"
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="userName"
                     value={user?.displayName}
                   />
                 </div>
               </div>
-              <div class="form-group row my-2">
-                <label for="userEmail" class="col-sm-2 col-form-label ">
+              <div className="form-group row my-2">
+                <label htmlFor="userEmail" className="col-sm-2 col-form-label ">
                   User Email:
                 </label>
-                <div class="col-sm-10 ">
+                <div className="col-sm-10 ">
                   <input
                     name="userEmail"
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="userEmail"
                     value={user?.email}
                   />
                 </div>
               </div>
-              <div class="form-group row my-2">
-                <label for="address" class="col-sm-2 col-form-label ">
+              <div className="form-group row my-2">
+                <label htmlFor="address" className="col-sm-2 col-form-label ">
                   Address:
                 </label>
-                <div class="col-sm-10 ">
+                <div className="col-sm-10 ">
                   <input
                     name="address"
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="address"
                     required
                   />
                 </div>
               </div>
-              <div class="form-group row my-2">
-                <label for="phone" class="col-sm-2 col-form-label ">
+              <div className="form-group row my-2">
+                <label htmlFor="phone" className="col-sm-2 col-form-label ">
                   Phone:
                 </label>
-                <div class="col-sm-10 ">
+                <div className="col-sm-10 ">
                   <input
                     name="phone"
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="phone"
                     required
                   />
@@ -279,7 +287,7 @@ const Purchase = () => {
               </button>
             </form>
           </div>
-          <div class="col-sm"></div>
+          <div className="col-sm"></div>
         </div>
       </div>
     </div>

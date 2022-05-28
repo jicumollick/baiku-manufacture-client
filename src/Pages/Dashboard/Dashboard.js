@@ -9,10 +9,10 @@ const Dashboard = () => {
   const [admin] = useAdmin(user);
   return (
     <div>
-      <div class="container-fluid">
-        <div class="row">
+      <div className="container-fluid">
+        <div className="row">
           <div
-            class="col-sm col-sm-2  align-items-center "
+            className="col-sm col-sm-2 col-md-3  align-items-center "
             style={{ backgroundColor: "LightGoldenrodYellow" }}
           >
             {/* sidebar  */}
@@ -44,10 +44,20 @@ const Dashboard = () => {
                   <Link to={"/dashboard/manageOrders"}> Manage Orders</Link>
                 </div>
               )}
+              {admin && (
+                <div className="dashboardItem">
+                  <Link to={"/dashboard/manageProducts"}> Manage Products</Link>
+                </div>
+              )}
+              {admin && (
+                <div className="dashboardItem">
+                  <Link to={"/dashboard/addProduct"}> Add Product</Link>
+                </div>
+              )}
             </div>
           </div>
           <div
-            class="col-sm col-sm-10"
+            className="col-sm col-sm-10 col-md-9"
             style={{ backgroundColor: "lightblue" }}
           >
             {/* body  */}

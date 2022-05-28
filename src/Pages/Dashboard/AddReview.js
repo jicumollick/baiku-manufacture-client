@@ -35,42 +35,42 @@ const AddReview = () => {
       {/* review adding form  */}
       <div className="w-50 mx-auto">
         <form onSubmit={(e) => addReview(e)}>
-          <div class="form-group">
-            <label for="name">Your Name</label>
+          <div className="form-group">
+            <label htmlFor="name">Your Name</label>
             <input
               name="name"
               type="text"
-              class="form-control"
+              className="form-control"
               id="name"
               aria-describedby="emailHelp"
               placeholder="Enter your name"
             />
           </div>
-          <div class="form-group py-3">
-            <label for="rating">Rating</label>
+          <div className="form-group py-3">
+            <label htmlFor="rating">Rating</label>
             <input
               name="rating"
               type="text"
-              class="form-control"
+              className="form-control"
               id="rating"
               aria-describedby="emailHelp"
               placeholder="Enter Your rating betwen ( 1 - 5)"
             />
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Your Message</label>
+          <div className="form-group">
+            <label htmlFor="exampleInputPassword1">Your Message</label>
 
             <textarea
               name="message"
               id="message"
               cols="30"
               rows="5"
-              class="form-control"
+              className="form-control"
               placeholder="Write your comment"
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary my-5">
+          <button type="submit" className="btn btn-primary my-5">
             Add
           </button>
         </form>

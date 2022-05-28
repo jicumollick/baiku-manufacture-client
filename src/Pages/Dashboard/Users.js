@@ -18,6 +18,7 @@ const Users = () => {
       },
     }).then((res) => res.json())
   );
+
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -46,7 +47,7 @@ const Users = () => {
     <div>
       <h2>All Users </h2>
 
-      <table class="table table-striped">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -56,7 +57,7 @@ const Users = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((u, index) => (
+          {users?.map((u, index) => (
             <tr key={u._id}>
               <th scope="row">{index + 1}</th>
               <td>{u.email}</td>

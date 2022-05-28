@@ -18,9 +18,13 @@ import Users from "./Pages/Dashboard/Users";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
 import ManageOrders from "./Pages/Dashboard/ManageOrders";
 import RequireAuth from "./Pages/Login/RequireAuth";
+import AddProduct from "./Pages/Dashboard/AddProduct";
+import ManageProducts from "./Pages/Dashboard/ManageProducts";
+import Payment from "./Pages/Dashboard/Payment";
 function App() {
   return (
     <div className="App">
+      <ToastContainer />
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,6 +37,7 @@ function App() {
           <Route path="review" element={<AddReview></AddReview>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
           <Route path="orders" element={<MyOrders></MyOrders>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="users"
             element={
@@ -49,6 +54,22 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          <Route
+            path="manageProducts"
+            element={
+              <RequireAdmin>
+                <ManageProducts></ManageProducts>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addProduct"
+            element={
+              <RequireAdmin>
+                <AddProduct></AddProduct>
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route path="/login" element={<Login></Login>} />
         <Route
@@ -61,7 +82,7 @@ function App() {
         />
         <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
-      <ToastContainer />
+
       <Footer></Footer>
     </div>
   );
