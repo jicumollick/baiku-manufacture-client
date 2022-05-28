@@ -16,7 +16,7 @@ const Purchase = () => {
 
   const { id } = useParams();
 
-  const url = `http://localhost:5000/purchase/${id}`;
+  const url = `https://immense-dawn-63493.herokuapp.com/purchase/${id}`;
 
   useEffect(() => {
     fetch(url, {
@@ -81,7 +81,7 @@ const Purchase = () => {
 
     // make a url and put this order in order table
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://immense-dawn-63493.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

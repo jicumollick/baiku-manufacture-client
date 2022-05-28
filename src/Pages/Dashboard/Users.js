@@ -11,7 +11,7 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch(`http://localhost:5000/users`, {
+    fetch(`https://immense-dawn-63493.herokuapp.com/users`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -23,7 +23,7 @@ const Users = () => {
   }
 
   const makeAdmin = (user) => {
-    fetch(`http://localhost:5000/user/admin/${user.email}`, {
+    fetch(`https://immense-dawn-63493.herokuapp.com/user/admin/${user.email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -44,7 +44,7 @@ const Users = () => {
   };
   return (
     <div>
-      <h2>All Users {users.length}</h2>
+      <h2>All Users </h2>
 
       <table class="table table-striped">
         <thead>

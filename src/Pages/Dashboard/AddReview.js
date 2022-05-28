@@ -11,7 +11,7 @@ const AddReview = () => {
     const review = { name, rating, message };
 
     // adding a single review to database
-    fetch("http://localhost:5000/review", {
+    fetch("https://immense-dawn-63493.herokuapp.com/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -23,15 +23,25 @@ const Dashboard = () => {
               <div className="dashboardItem">
                 <Link to={"/dashboard/profile"}>My Profile</Link>
               </div>
-              <div className="dashboardItem">
-                <Link to={"/dashboard/review"}>Add Review</Link>
-              </div>
-              <div className="dashboardItem">
-                <Link to={"/dashboard/orders"}>My Orders</Link>
-              </div>
+              {!admin && (
+                <div className="dashboardItem">
+                  <Link to={"/dashboard/review"}>Add Review</Link>
+                </div>
+              )}
+              {!admin && (
+                <div className="dashboardItem">
+                  <Link to={"/dashboard/orders"}>My Orders</Link>
+                </div>
+              )}
+
               {admin && (
                 <div className="dashboardItem">
                   <Link to={"/dashboard/users"}> All Users</Link>
+                </div>
+              )}
+              {admin && (
+                <div className="dashboardItem">
+                  <Link to={"/dashboard/manageOrders"}> Manage Orders</Link>
                 </div>
               )}
             </div>
@@ -42,7 +52,7 @@ const Dashboard = () => {
           >
             {/* body  */}
             <h2 className="py-3">
-              Welcome to Your Dashboard, {user?.displayName}{" "}
+              Welcome to Your Dashboard {user?.displayName}{" "}
             </h2>
             <Outlet></Outlet>
           </div>

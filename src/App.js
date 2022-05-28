@@ -16,6 +16,8 @@ import AddReview from "./Pages/Dashboard/AddReview";
 import MyOrders from "./Pages/Dashboard/MyOrders";
 import Users from "./Pages/Dashboard/Users";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
+import ManageOrders from "./Pages/Dashboard/ManageOrders";
+import RequireAuth from "./Pages/Login/RequireAuth";
 function App() {
   return (
     <div className="App">
@@ -39,9 +41,24 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          <Route
+            path="manageOrders"
+            element={
+              <RequireAdmin>
+                <ManageOrders></ManageOrders>
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route path="/login" element={<Login></Login>} />
-        <Route path="/purchase/:id" element={<Purchase></Purchase>} />
+        <Route
+          path="/purchase/:id"
+          element={
+            <RequireAuth>
+              <Purchase></Purchase>
+            </RequireAuth>
+          }
+        />
         <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
       <ToastContainer />
